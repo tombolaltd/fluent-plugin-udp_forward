@@ -3,10 +3,9 @@
 #### Overview
 
 This fluent input plugin allows you to collect incoming events over UDP.
-While fluentd's default UDP Input plugin supports to add a tag to the received message statically by configuration,
-it does not support to extract a tag from the received message.
-This plugin supports to extract the tag from incoming events over UDP. UDP event needs to be in a JSON format;
-an example will follow shortly
+While fluentd's default UDP Input plugin supports adding a tag to the received message statically by configuration,
+it does not support extracting a tag from the received message.
+This plugin supports extracting the tag from incoming events over UDP. UDP events should be in JSON format.
 
 #### Installation
 
