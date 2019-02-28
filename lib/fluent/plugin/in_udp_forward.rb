@@ -39,11 +39,14 @@ module Fluent
     def run
        loop do
          text, sender =  @udp_socket.recvfrom(@message_length_limit)
+         if text.length() == @message_length_limit
+           $log.warn "Message length was #{text.length()} bytes, the same as the length limit: #{text}"
+         end
          begin
-         json_obj = JSON.parse(text)
+           json_obj = JSON.parse(text)
          rescue
-          $log.debug "Parse error : #{text} \n #{$!.to_s}" 
-          json_obj = {}
+           $log.warn "Parse error : #{text} \n #{$!.to_s}" 
+           json_obj = {}
          end
          time = Engine.now
          tag = json_obj[@tag_key] || "unknown"
