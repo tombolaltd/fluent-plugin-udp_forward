@@ -16,19 +16,17 @@ This plugin supports extracting the tag from incoming events over UDP. UDP event
     <source>
         @type udp_forward
         bind "localhost"          
-        port 5161
+        port 5160
         tag_key "tag"
         message_key "data"
-        message_length_limit 4096 
      </source>
    
  Optional parameters are as follows:
 
 - bind: The bind address to listen to. Default is "0.0.0.0
-- port: The port to listen to. Default is 5161
+- port: The port to listen to. Default is 5160
 - tag_key: Name of tag key. Default is "tag"
 - message_key: Name of message key. Default is "data"
-- message_length_limit: Maximum size of a message in bytes. Default is 4096
 
 #### Example 
   If your fluentd source configuration is the same as above and you submitting an event like this:
@@ -37,7 +35,7 @@ This plugin supports extracting the tag from incoming events over UDP. UDP event
      require 'json'
      
      my_hash = {tag: 'my_tag', data:{ "level": "INFO", "time": Time.now, "message": "Yayyy!!" }}
-     UDPSocket.new.send(JSON.generate(my_hash), 0, 'localhost', 5161) 
+     UDPSocket.new.send(JSON.generate(my_hash), 0, 'localhost', 5160) 
     
   The output will be:
       
@@ -48,7 +46,7 @@ This plugin supports extracting the tag from incoming events over UDP. UDP event
 
 | fluent-plugin-udp_forward | fluentd |
 |-------------------|---------|
-| >= 1.0.0 | >= v0.14.0 < 2 |
+| >= 1.0.0 | >= v0.12.0 < 2 |
 
 #### Contributing
 
