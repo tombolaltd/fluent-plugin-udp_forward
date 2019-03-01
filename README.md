@@ -1,3 +1,4 @@
+[<img src="https://badge.fury.io/rb/fluent-plugin-udp_forward.png" alt="Gem Version" />](http://badge.fury.io/rb/fluent-plugin-udp_forward)
 # fluent-plugin-udp_forward
 
 #### Overview
