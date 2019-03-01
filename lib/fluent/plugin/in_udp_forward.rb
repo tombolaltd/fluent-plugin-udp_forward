@@ -45,7 +45,7 @@ module Fluent
         begin
           parsed = JSON.parse(message)
         rescue
-          $log.warn "Parse error : #{message} \n #{$!.to_s}" 
+          $log.warn("Parse error : #{message} \n #{$!.to_s}")
           parsed = {}
         end
 
