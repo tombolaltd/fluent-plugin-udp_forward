@@ -50,8 +50,12 @@ module Fluent
         end
 
         time = Engine.now
-        tag = parsed[@tag_key] || "unknown"
+        tag = parsed[@tag_key]
         record = parsed[@message_key]
+
+        if(tag.nil? || record.nil?)
+          $log.warn("invalid message supplied: #{message}")
+        end
 
         return [tag, time, record]
       end
