@@ -2,7 +2,7 @@
 Gem::Specification.new do |gem|
   gem.name = "fluent-plugin-udp_forward"
   gem.description = "This input plugin allows you to collect incoming events over UDP"
-  gem.homepage = "https://github.com/fluent-plugin-udp_forward"
+  gem.homepage = "https://github.com/tombolaltd/fluent-plugin-udp_forward"
   gem.summary = gem.description
   gem.version = "1.0.0"
   gem.license = 'MIT'
