@@ -1,5 +1,5 @@
-require 'fluent/plugin/input'
-module Fluent::Plugin
+require 'fluent/input'
+module Fluent
   class UDPForwardInput < Input
 
     Fluent::Plugin.register_input('udp_forward', self)
