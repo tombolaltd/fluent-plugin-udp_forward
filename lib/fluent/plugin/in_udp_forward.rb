@@ -1,5 +1,5 @@
-require 'fluent/input'
-module Fluent
+require 'fluent/plugin/input'
+module Fluent::Plugin
   class UDPForwardInput < Input
 
     Fluent::Plugin.register_input('udp_forward', self)
@@ -12,6 +12,10 @@ module Fluent
 
     def configure(conf)
       super
+    end
+
+    def multi_workers_ready?
+      true
     end
 
     def start
