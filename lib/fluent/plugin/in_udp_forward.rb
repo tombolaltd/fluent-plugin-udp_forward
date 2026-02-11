@@ -53,6 +53,11 @@ module Fluent
           parsed = {}
         end
 
+        unless parsed.is_a?(Hash)
+          $log.warn("invalid message format, expected JSON object: #{message}")
+          return [nil, Engine.now, nil]
+        end
+
         time = Engine.now
         tag = parsed[@tag_key]
         record = parsed[@message_key]
