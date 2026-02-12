@@ -4,7 +4,7 @@ Gem::Specification.new do |gem|
   gem.description = "This input plugin allows you to collect incoming events over UDP"
   gem.homepage = "https://github.com/tombolaltd/fluent-plugin-udp_forward"
   gem.summary = gem.description
-  gem.version = "2.0.1"
+  gem.version = "2.0.2"
   gem.license = 'MIT'
   gem.authors = ["Sohaib Maroof"]
   gem.email = "sohaib.maroof@tombola.com"
